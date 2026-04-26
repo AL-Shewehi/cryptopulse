@@ -62,7 +62,7 @@ const CustomCursor = () => {
 
       {/* النقطة الداخلية (بتتحرك فوراً مع الماوس) */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 bg-primary rounded-full pointer-events-none z-10000"
+        className="fixed top-0 left-0 w-2 h-2 bg-primary rounded-full pointer-events-none z-10000 pointer-coarse:hidden"
         style={{
           x: mouseX,
           y: mouseY,
