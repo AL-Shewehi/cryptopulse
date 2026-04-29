@@ -4,6 +4,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 
 const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   // 1. التقاط إحداثيات الماوس المباشرة بدون أي Re-render
   const mouseX = useMotionValue(-100);
@@ -27,6 +28,7 @@ const CustomCursor = () => {
       const target = e.target as HTMLElement;
       // لو العنصر اللي فوقه الماوس هو رابط أو زرار أو أي عنصر محدد بـ data-cursor="hover"، نخلي الدائرة تكبر وتغير لونها
       const isHoverable = target.closest("a, button, [data-cursor='hover']");
+      setIsDisabled(!!target.closest("[data-cursor='disabled']"));
       setIsHovering(!!isHoverable);
     };
 
@@ -43,8 +45,8 @@ const CustomCursor = () => {
     <>
       {/* الحلقة الخارجية (بتتحرك بفيزياء مرنة) */}
       <motion.div
-        className="fixed top-0 left-0 w-10 h-10 border-[1.5px] border-primary rounded-full pointer-events-none z-9999 
-        pointer-coarse:hidden" // نخفيها على الأجهزة اللمسية
+        className={`fixed top-0 left-0 w-10 h-10 border-[1.5px] border-primary ${isDisabled ? "border-red-500" : ""} rounded-full pointer-events-none z-9999 
+        pointer-coarse:hidden `}// نخفيها على الأجهزة اللمسية
         style={{
           x: ringX,
           y: ringY,
@@ -53,7 +55,9 @@ const CustomCursor = () => {
         }}
         animate={{
           scale: isHovering ? 1.5 : 1,
-          backgroundColor: isHovering
+          backgroundColor: 
+          isDisabled ? "rgba(255, 0, 0, 0.5)" :
+          isHovering
             ? "rgba(57, 255, 20, 0.2)"
             : "rgba(0,0,0,0)",
         }}
@@ -70,8 +74,8 @@ const CustomCursor = () => {
           translateY: "-50%",
         }}
         animate={{
-          opacity: isHovering ? 0 : 1,
-          scale: isHovering ? 0 : 1,
+          opacity: isHovering || isDisabled ? 0 : 1,
+          scale: isHovering || isDisabled ? 0 : 1,
         }}
         transition={{ duration: 0.15 }}
       />

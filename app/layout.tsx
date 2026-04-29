@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Chewy } from "next/font/google";
 import "./globals.css";
-import Navbar from "./components/layout/Navbar";
-import CustomCursor from "./components/ui/CustomCursor";
-import Footer from "./components/layout/Footer";
+import CustomCursor from "@/components/ui/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -30,9 +28,7 @@ export default function RootLayout({
         className={`${inter.variable} ${chewy.variable} font-sans antialiased bg-background text-foreground`}
       >
         <CustomCursor />
-        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   );
