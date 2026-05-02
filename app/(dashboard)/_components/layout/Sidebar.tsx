@@ -19,7 +19,7 @@ const sidebarItems = [
     href: "/dashboard",
   },
   { name: "Swap", icon: <ArrowLeftRight size={20} />, href: "/swap" },
-  { name: "Portfolio", icon: <Wallet size={20} />, href: "#" },
+  { name: "Wallet", icon: <Wallet size={20} />, href: "/wallet" },
   { name: "Transactions", icon: <History size={20} />, href: "#" },
   { name: "Settings", icon: <Settings size={20} />, href: "#" },
 ];
