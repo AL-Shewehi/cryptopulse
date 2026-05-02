@@ -35,7 +35,8 @@ const profitData = [
 
 export default function DashboardPage() {
   return (
-    <div className="space-y-8">
+    <div className="space-y-6">
+      {/* كروت الإحصائيات العلوية */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -50,7 +51,6 @@ export default function DashboardPage() {
           trendText="vs last week"
           chartData={balanceData}
         />
-
         <StatCard
           title="Profit Ratio"
           value="13.20%"
@@ -59,7 +59,6 @@ export default function DashboardPage() {
           trendText="vs last month"
           chartData={profitData}
         />
-
         <StatCard
           title="Bitcoin (BTC)"
           value="$38,718.24"
@@ -68,7 +67,6 @@ export default function DashboardPage() {
           trendText="24h change"
           chartData={btcData}
         />
-
         <StatCard
           title="Ethereum (ETH)"
           value="$1,218.21"
@@ -79,45 +77,46 @@ export default function DashboardPage() {
         />
       </motion.div>
 
-      <div className="flex flex-col lg:flex-row gap-6 mt-8 w-full">
-        <div className="w-full lg:w-2/3 flex flex-col gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-full"
-          >
-            <MainChart />
-          </motion.div>
+      {/* السطر الأوسط: الشارت وتفاصيل الرصيد */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="lg:col-span-2 flex flex-col"
+        >
+          <MainChart />
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="w-full"
-          >
-            <TransactionsTable />
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="lg:col-span-1 flex flex-col"
+        >
+          <BalanceDetails />
+        </motion.div>
+      </div>
 
-        <div className="w-full lg:w-1/3 flex flex-col gap-6">
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <BalanceDetails />
-          </motion.div>
+      {/* السطر السفلي: جدول المعاملات وفورمة التحويل */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="lg:col-span-2 flex flex-col"
+        >
+          <TransactionsTable />
+        </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="w-full flex flex-col gap-6"
-          >
-            <ExchangeWidget />
-          </motion.div>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="lg:col-span-1 flex flex-col"
+        >
+          <ExchangeWidget />
+        </motion.div>
       </div>
     </div>
   );

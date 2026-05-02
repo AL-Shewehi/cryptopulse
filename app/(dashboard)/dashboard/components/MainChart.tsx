@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { TrendingUp } from "lucide-react";
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, Legend } from "recharts";
 
 const data = [
   { name: "Jan", btc: 4000, eth: 2400, usdt: 2400 },
@@ -20,7 +20,8 @@ const data = [
 
 export default function MainChart() {
   return (
-    <div className="bg-card/50 backdrop-blur-md border border-border p-6 rounded-2xl shadow-sm w-full">
+    // 1. ضفنا flex flex-col هنا
+    <div className="bg-card/50 backdrop-blur-md border border-border p-6 rounded-2xl shadow-sm w-full h-full flex flex-col">
       {/* الهيدر */}
       <div className="flex justify-between items-center mb-6">
         <div className="flex items-center gap-2">
@@ -38,7 +39,7 @@ export default function MainChart() {
         </div>
       </div>
 
-      <div className="w-full min-h-75 mt-4" style={{ height: 300 }}>
+      <div className="w-full flex-1 min-h-62.5 mt-4">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart
             data={data}
@@ -51,13 +52,14 @@ export default function MainChart() {
               tickLine={false}
               axisLine={false}
             />
+            <Legend iconType="square" wrapperStyle={{ paddingTop: "10px" }} />
             <Tooltip
               contentStyle={{
-                backgroundColor: "#111",
-                borderColor: "#333",
+                backgroundColor: "#0f172a",
+                borderColor: "#1e293b",
                 borderRadius: "8px",
               }}
-              itemStyle={{ color: "#fff" }}
+              itemStyle={{ color: "#f3f4f6" }}
             />
             <Line
               type="monotone"

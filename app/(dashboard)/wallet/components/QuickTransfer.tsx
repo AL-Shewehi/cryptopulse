@@ -21,8 +21,8 @@ export default function QuickTransfer({ activeCoin }: { activeCoin: string }) {
 
       <div className="mb-4 relative">
         <select className="w-full flex items-center justify-between border border-border bg-background p-3 pl-12 pr-4 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-primary">
-          <option disabled selected>
-            Select Payment Method 
+          <option value="default" disabled selected>
+            Select Payment Method
           </option>
           <option value="card">Credit / Debit Card</option>
           <option value="bank">Bank Transfer</option>
