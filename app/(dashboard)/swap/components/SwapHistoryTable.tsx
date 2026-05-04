@@ -10,11 +10,14 @@ export default function SwapHistoryTable({
   data: LimitOrder[] | InstantHistory[];
 }) {
   return (
-    <div className="w-full bg-card/50 backdrop-blur-md border border-border p-6 rounded-2xl shadow-sm">
+    <div className="w-full bg-card/50 backdrop-blur-md border border-border p-6 rounded-2xl shadow-sm ">
       <h2 className="text-3xl font-bold mb-4">
         {type === "limit" ? "Active Orders" : "Swap History"}
       </h2>
-      <table className="w-full text-center border-collapse table-auto overflow-x-auto">
+      <div className="overflow-x-auto">
+
+      
+      <table className="w-full text-center border-collapse table-auto">
         <thead className="text-md text-muted-foreground border-b border-border mb-4 pb-2 capitalize font-medium">
           {type === "limit" ? (
             <tr>
@@ -103,6 +106,7 @@ export default function SwapHistoryTable({
           )}
         </tbody>
       </table>
+      </div>
     </div>
   );
 }

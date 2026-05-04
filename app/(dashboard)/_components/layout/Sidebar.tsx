@@ -1,6 +1,7 @@
 "use client";
 import {
   ArrowLeftRight,
+  ChartCandlestick,
   History,
   LayoutDashboard,
   LogOut,
@@ -20,6 +21,7 @@ const sidebarItems = [
   },
   { name: "Swap", icon: <ArrowLeftRight size={20} />, href: "/swap" },
   { name: "Wallet", icon: <Wallet size={20} />, href: "/wallet" },
+  { name: "Trade", icon: <ChartCandlestick size={20} />, href: "/trade" },
   { name: "Transactions", icon: <History size={20} />, href: "#" },
   { name: "Settings", icon: <Settings size={20} />, href: "#" },
 ];
