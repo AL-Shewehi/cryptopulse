@@ -4,24 +4,18 @@ import {
   User, 
   Settings, 
   LogOut, 
-  LayoutDashboard, 
-  ArrowLeftRight, 
-  Wallet, 
-  ChartCandlestick, 
-  History 
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 
-// نقلنا اللينكات هنا (ممكن تشيل الأيقونات لو حابب شكل Binance بالظبط، بس أنا سيبتهالك تصغرها لو حبيت)
 const navItems = [
-  { name: "Dashboard", href: "/dashboard", icon: <LayoutDashboard size={16} /> },
-  { name: "Trade", href: "/trade", icon: <ChartCandlestick size={16} /> },
-  { name: "Swap", href: "/swap", icon: <ArrowLeftRight size={16} /> },
-  { name: "Wallet", href: "/wallet", icon: <Wallet size={16} /> },
-  { name: "Transactions", href: "#", icon: <History size={16} /> },
+  { name: "Dashboard", href: "/dashboard" },
+  { name: "Markets", href: "/markets" },
+  { name: "Trade", href: "/trade"},
+  { name: "Swap", href: "/swap"},
+  { name: "Wallet", href: "/wallet" },
 ];
 
 function DashboardHeader() {
@@ -31,9 +25,7 @@ function DashboardHeader() {
   return (
     <header className="h-16 border-b border-border flex items-center justify-between px-6 bg-background/50 sticky top-0 z-20 backdrop-blur-md">
       
-      {/* 1. الجزء اللي على الشمال: اللوجو + اللينكات */}
       <div className="flex items-center gap-8">
-        {/* اللوجو */}
         <Link href="/" className="flex items-center gap-2 shrink-0" data-cursor="hover">
           <Image 
             src="/logo.png" 
@@ -45,7 +37,6 @@ function DashboardHeader() {
           />
         </Link>
 
-        {/* اللينكات بالعرض (بتختفي في الموبايل) */}
         <nav className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <Link
@@ -57,14 +48,12 @@ function DashboardHeader() {
                     : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"}`}
               data-cursor="hover"
             >
-              {/* {item.icon} // لو عايز تفعل الأيقونات شيل الكومنت من هنا، بس بدون أيقونات أشيك زي بينانس */}
               <span>{item.name}</span>
             </Link>
           ))}
         </nav>
       </div>
 
-      {/* 2. الجزء اللي على اليمين: الإشعارات، المحفظة، البروفايل */}
       <div className="flex items-center gap-4 ml-auto">
         <button
           className="p-2 text-muted-foreground hover:text-foreground transition-colors relative"

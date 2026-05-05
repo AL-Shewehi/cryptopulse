@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <footer className="relative w-full bg-[#050810] border-t border-white/5 pt-16 pb-8 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
+      <div className=" px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* العمود الأول: البراند والسوشيال */}
           <motion.div

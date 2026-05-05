@@ -13,7 +13,10 @@ export default function MarketingLayout({
 
       <main className="flex-1">{children}</main>
 
+      <div className="max-w-7xl mx-auto">
+
       <Footer />
+      </div>
     </div>
   );
 }

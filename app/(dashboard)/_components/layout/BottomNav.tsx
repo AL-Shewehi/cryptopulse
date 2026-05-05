@@ -2,16 +2,17 @@
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, ArrowLeftRight, Wallet, History } from "lucide-react";
+import { LayoutDashboard, ArrowLeftRight, Wallet, CircleDollarSign, ChartCandlestick } from "lucide-react";
 
 export default function BottomNav() {
   const pathname = usePathname();
 
   const navItems = [
     { name: "Overview", href: "/dashboard", icon: LayoutDashboard },
+    { name: "Markets", href: "/markets", icon: CircleDollarSign },
+    { name: "Trade", href: "/trade", icon: ChartCandlestick },
     { name: "Swap", href: "/swap", icon: ArrowLeftRight },
     { name: "Wallet", href: "/wallet", icon: Wallet },
-    { name: "History", href: "/transactions", icon: History },
   ];
 
   return (
