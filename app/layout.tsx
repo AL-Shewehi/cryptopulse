@@ -13,8 +13,8 @@ const chewy = Chewy({
 });
 
 export const metadata: Metadata = {
-  title: "CryptoPulse | Be Limitless",
-  description: "Next Generation Crypto Trading",
+  title: "CryptoPulse",
+  description: "CryptoPulse - Your Ultimate Crypto Trading Platform",
 };
 
 export default function RootLayout({
