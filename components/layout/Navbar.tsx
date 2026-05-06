@@ -102,9 +102,9 @@ const Navbar = () => {
       </div>
 
       <div className="flex items-center gap-10 ">
-        <div className="hidden sm:block">
+        <Link href="/dashboard" className="hidden sm:block">
           <NeoButton>Get Started</NeoButton>
-        </div>
+        </Link>
 
         <div className="md:hidden">
           <button onClick={() => setIsOpen(!isOpen)} type="button" aria-label="Toggle Menu">

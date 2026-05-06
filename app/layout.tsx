@@ -9,6 +9,7 @@ const chewy = Chewy({
   weight: "400",
   subsets: ["latin"],
   variable: "--font-chewy",
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -22,8 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      {/* دمج المتغيرات بتاعت الخطوط في الـ body */}
+    <html lang="en" data-scroll-behavior="smooth">
       <body
         className={`${inter.variable} ${chewy.variable} font-sans antialiased bg-background text-foreground`}
       >

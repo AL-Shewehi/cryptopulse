@@ -90,6 +90,7 @@ export default function TickerHeader() {
           onChange={(e) => setSymbol(e.target.value)}
           className="text-xl font-bold text-foreground bg-card/50 px-2 py-1 rounded-lg outline-none"
           data-cursor="hover"
+          aria-label="Select Symbol"
         >
           <option value="BTCUSDT" className="bg-card ">
             BTC/USDT

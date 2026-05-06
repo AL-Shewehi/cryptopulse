@@ -1,7 +1,14 @@
 "use client";
 import React from "react";
 import { TrendingUp } from "lucide-react";
-import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer, Legend } from "recharts";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  Tooltip,
+  ResponsiveContainer,
+  Legend,
+} from "recharts";
 
 const data = [
   { name: "Jan", btc: 4000, eth: 2400, usdt: 2400 },
@@ -40,7 +47,12 @@ export default function MainChart() {
       </div>
 
       <div className="w-full flex-1 min-h-62.5 mt-4">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer
+          width="100%"
+          height="100%"
+          minWidth={1}
+          minHeight={1}
+        >
           <LineChart
             data={data}
             margin={{ top: 10, right: 10, left: -20, bottom: 0 }}

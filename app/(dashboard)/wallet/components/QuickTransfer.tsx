@@ -20,7 +20,11 @@ export default function QuickTransfer({ activeCoin }: { activeCoin: string }) {
       <h2 className="text-lg font-bold mb-6">Quick Transfer</h2>
 
       <div className="mb-4 relative">
-        <select defaultValue={"default"} className="w-full flex items-center justify-between border border-border bg-background p-3 pl-12 pr-4 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-primary">
+        <select
+          defaultValue={"default"}
+          className="w-full flex items-center justify-between border border-border bg-background p-3 pl-12 pr-4 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-primary"
+          aria-label="Select Payment Method"
+        >
           <option value="default" disabled>
             Select Payment Method
           </option>
@@ -44,14 +48,14 @@ export default function QuickTransfer({ activeCoin }: { activeCoin: string }) {
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             placeholder={`0.00`}
-            className="w-full bg-background border border-border p-3 rounded-lg pl-12 pr-4 text-sm focus:outline-none focus:ring-1 focus:ring-primary"
+            className="w-full h-12 bg-background border border-border p-3 rounded-lg pl-12 pr-4 text-sm focus:outline-none focus:ring-1 focus:ring-primary"
           />
           <div className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-foreground font-bold">
             {activeCoin.charAt(0)}
           </div>
           <button
             onClick={() => setAmount(balance)}
-            className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-primary font-bold hover:underline"
+            className="absolute right-3 top-1/2 -translate-y-1/2 min-h-12 min-w-12 text-xs text-primary font-bold hover:underline"
           >
             MAX
           </button>

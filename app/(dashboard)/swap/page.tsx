@@ -112,7 +112,7 @@ export default function Page() {
         <div className="w-full lg:w-1/2 flex-1">
           <SwapChart />
         </div>
-        <div className="w-full lg:w-1/2 md:max-w-lg">
+        <div className="w-full lg:w-1/2 lg:max-w-md">
           <SwapForm
             type={transactionType}
             setTransactionType={setTransactionType}

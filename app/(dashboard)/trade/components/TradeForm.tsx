@@ -4,7 +4,6 @@ import { Settings2 } from "lucide-react";
 import { useTrade } from "../TradeContext";
 
 export default function TradeForm() {
-  // States للتحكم في الفورمة
   const [side, setSide] = useState<"buy" | "sell">("buy");
   const [orderType, setOrderType] = useState<"limit" | "market" | "tp/sl">("limit");
   const [tradeMode, setTradeMode] = useState<"spot" | "convert" | "margin">("spot");
@@ -13,8 +12,8 @@ export default function TradeForm() {
 
   const baseAsset = symbol.replace("USDT", ""); 
 
-  // ألوان ديناميكية بناءً على حالة البيع والشراء
-  const activeColor = side === "buy" ? "bg-[#26a69a]" : "bg-[#ef5350]";
+  // اللون النشط
+  const activeColor = side === "buy" ? "bg-[#1b7a71]" : "bg-[#ef5350]";
 
   return (
     <div className="w-full h-full flex flex-col pt-2 px-2 text-sm min-h-0">
@@ -43,7 +42,7 @@ export default function TradeForm() {
       <div className="flex bg-card/50 rounded-lg p-1 mb-4 border border-border/50">
         <button
           className={`flex-1 py-1.5 rounded-md font-bold transition-all ${
-            side === "buy" ? "bg-[#26a69a] text-white shadow-sm" : "text-muted-foreground hover:text-foreground"
+            side === "buy" ? "bg-[#1b7a71] text-white shadow-sm" : "text-muted-foreground hover:text-foreground"
           }`}
           onClick={() => setSide("buy")}
         >
@@ -82,7 +81,6 @@ export default function TradeForm() {
 
       {/* 5. حقول الإدخال (Price & Quantity) */}
       <div className="flex flex-col gap-3 mb-6">
-        {/* حقل السعر */}
         <div className="flex justify-between items-center bg-card/30 border border-border/50 rounded-lg p-2.5 text-xs focus-within:border-primary/50 transition-colors">
           <span className="text-muted-foreground">Price</span>
           <div className="flex items-center gap-2 w-1/2">
@@ -90,6 +88,7 @@ export default function TradeForm() {
               type="number"
               defaultValue="78229.7"
               className="bg-transparent text-right outline-none text-foreground w-full font-medium"
+              aria-label="price"
             />
             <span className="text-muted-foreground">USDT</span>
           </div>
@@ -103,6 +102,7 @@ export default function TradeForm() {
               type="number"
               placeholder="0.00"
               className="bg-transparent text-right outline-none text-foreground w-full font-medium"
+              aria-label="quantity"
             />
             <span className="text-muted-foreground">BTC</span>
           </div>
@@ -118,6 +118,7 @@ export default function TradeForm() {
           defaultValue="0"
           className="w-full h-1 bg-border rounded-lg appearance-none cursor-pointer accent-[#f7a600]"
           step="25"
+          aria-label="range slider"
         />
         <div className="flex justify-between text-[10px] text-muted-foreground mt-2">
           <span>0%</span>
@@ -128,7 +129,7 @@ export default function TradeForm() {
         </div>
       </div>
 
-      {/* 7. قيمة الأوردر الإجمالية وتفاصيل إضافية */}
+      {/* 7. قيمة الأوردر */}
       <div className="flex flex-col gap-2 px-2 text-xs mb-6">
         <div className="flex justify-between">
           <span className="text-muted-foreground">Order Value</span>

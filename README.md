@@ -69,6 +69,7 @@ The project follows a highly scalable modular structure leveraging Next.js Route
 │   └── 📄 validations.ts       # Zod schemas & form validation logic
 └── 📂 public                   # Static assets (Images, Icons)
 
+
 🚀 Getting Started
 First, clone the repository and install the dependencies:
 

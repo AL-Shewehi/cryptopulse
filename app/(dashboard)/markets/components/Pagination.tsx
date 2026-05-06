@@ -23,6 +23,7 @@ export default function Pagination({
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
         data-cursor={currentPage === 1 ? "disabled" : "hover"}
+        aria-label="Previous Page"
       >
         <ChevronLeft size={16} />
       </button>
@@ -54,6 +55,7 @@ export default function Pagination({
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
         data-cursor={currentPage === totalPages ? "disabled" : "hover"}
+        aria-label="Next Page"
       >
         <ChevronRight size={16} />
       </button>

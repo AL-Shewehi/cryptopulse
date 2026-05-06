@@ -1,20 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  /* 1. ألوان الخلفيات والنصوص الأساسية */
   --background: #030712; 
-  --foreground: #f8fafc; /* أبيض ناصع صلب (بدون شفافية) لحدة القراءة */
+  --foreground: #f8fafc; 
 
-  /* 2. ألوان الكروت والأقسام (Cards & Sections) */
   --card: #0f172a; 
   --border: #1e293b; 
 
-  /* 3. ألوان الهوية (CryptPulse Theme) */
   --primary: #00f0ff; 
   --primary-hover: #00c3cc; 
 
-  /* 4. نصوص ثانوية (Muted) */
-  --muted-foreground: #cbd5e1; /* درجة أفتح (Slate-300) عشان تنجح في اختبار التباين */
+  --muted-foreground: #cbd5e1;
 }
 
 @theme {

@@ -25,10 +25,12 @@ export default function ExchangeWidget() {
         <div className="space-y-4">
           {/* حقل الدفع (Pay) */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs text-muted-foreground ml-1">Pay</label>
+            <label htmlFor="pay" className="text-xs text-muted-foreground ml-1">Pay</label>
             <div className="flex items-center bg-secondary/30 border border-border rounded-xl p-2 focus-within:border-primary transition-colors">
               <input
                 type="text"
+                name="pay"
+                aria-label="pay amount"
                 defaultValue="0.0709"
                 className="bg-transparent border-none outline-none w-full px-2 font-medium text-foreground"
               />
@@ -44,10 +46,12 @@ export default function ExchangeWidget() {
 
           {/* حقل الاستلام (Get) */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-xs text-muted-foreground ml-1">Get</label>
+            <label htmlFor="get" className="text-xs text-muted-foreground ml-1">Get</label>
             <div className="flex items-center bg-secondary/30 border border-border rounded-xl p-2 focus-within:border-primary transition-colors">
               <input
                 type="text"
+                name="get"
+                aria-label="get amount"
                 defaultValue="5000"
                 className="bg-transparent border-none outline-none w-full px-2 font-medium text-foreground"
               />

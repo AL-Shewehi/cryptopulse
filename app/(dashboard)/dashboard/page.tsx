@@ -83,7 +83,7 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="lg:col-span-2 flex flex-col"
+          className="lg:col-span-2 min-h-100 flex flex-col"
         >
           <MainChart />
         </motion.div>
@@ -92,7 +92,7 @@ export default function DashboardPage() {
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="lg:col-span-1 flex flex-col"
+          className="lg:col-span-1 min-h-100 flex flex-col"
         >
           <BalanceDetails />
         </motion.div>

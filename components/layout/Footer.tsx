@@ -20,28 +20,28 @@ const Footer = () => {
             <h2 className="text-3xl font-bold font-heading text-white tracking-wider">
               Crypt<span className="text-primary">Pulse</span>
             </h2>
-            <p className="text-sm text-muted-foreground leading-relaxed mt-2">
+            <p className="text-sm text-gray-400 leading-relaxed mt-2">
               The next-generation decentralized ecosystem bridging traditional
               finance and Web3 with lightning-fast, secure transactions.
             </p>
             <div className="flex items-center gap-3 mt-4">
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary/20 hover:text-primary hover:-translate-y-1 transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary/20 hover:text-primary hover:-translate-y-1 transition-all duration-300"
                 aria-label="Twitter"
               >
                 <FaTwitter size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary/20 hover:text-primary hover:-translate-y-1 transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary/20 hover:text-primary hover:-translate-y-1 transition-all duration-300"
                 aria-label="Telegram"
               >
                 <FaTelegramPlane size={18} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-muted-foreground hover:bg-primary/20 hover:text-primary hover:-translate-y-1 transition-all duration-300"
+                className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-primary/20 hover:text-primary hover:-translate-y-1 transition-all duration-300"
                 aria-label="Discord"
               >
                 <FaDiscord size={18} />
@@ -66,7 +66,7 @@ const Footer = () => {
                   <li key={item}>
                     <a
                       href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-                      className="text-sm text-muted-foreground hover:text-primary hover:pl-2 transition-all duration-300 inline-block"
+                      className="text-sm text-gray-400 hover:text-primary hover:pl-2 transition-all duration-300 inline-block"
                       aria-label={`Go to ${item}`}
                     >
                       {item}
@@ -98,7 +98,7 @@ const Footer = () => {
                 <li key={item}>
                   <a
                     href="#"
-                    className="text-sm text-muted-foreground hover:text-primary hover:pl-2 transition-all duration-300 inline-block"
+                    className="text-sm text-gray-400 hover:text-primary hover:pl-2 transition-all duration-300 inline-block"
                     aria-label={`Download ${item}`}
                   >
                     {item}
@@ -119,7 +119,7 @@ const Footer = () => {
               text="Stay Updated"
               className="text-lg font-heading text-white"
             />
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-gray-400">
               Don&apos;t miss out on our latest announcements and presale
               stages.
             </p>
@@ -145,10 +145,10 @@ const Footer = () => {
         {/* حقوق الملكية */}
         <div className="flex flex-col lg:flex-row justify-between items-center gap-6 text-center lg:text-left">
           <p
-            className="text-[11px] text-muted-foreground/60 leading-relaxed max-w-3xl"
+            className="text-[11px] text-gray-400/60 leading-relaxed max-w-3xl"
             aria-label="Risk disclaimer"
           >
-            <span className="font-bold text-muted-foreground">
+            <span className="font-bold text-gray-400">
               Risk Disclaimer:
             </span>{" "}
             Cryptocurrency investments carry a high level of risk and may not be
@@ -158,7 +158,7 @@ const Footer = () => {
             financial advice.
           </p>
           <p
-            className="text-xs text-muted-foreground font-medium whitespace-nowrap"
+            className="text-xs text-gray-400 font-medium whitespace-nowrap"
             aria-label="Copyright information"
           >
             © {new Date().getFullYear()} CryptPulse. All rights reserved.

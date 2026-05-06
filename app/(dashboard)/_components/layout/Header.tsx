@@ -1,10 +1,5 @@
 "use client";
-import { 
-  Bell, 
-  User, 
-  Settings, 
-  LogOut, 
-} from "lucide-react";
+import { Bell, User, Settings, LogOut } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,8 +8,8 @@ import React, { useState } from "react";
 const navItems = [
   { name: "Dashboard", href: "/dashboard" },
   { name: "Markets", href: "/markets" },
-  { name: "Trade", href: "/trade"},
-  { name: "Swap", href: "/swap"},
+  { name: "Trade", href: "/trade" },
+  { name: "Swap", href: "/swap" },
   { name: "Wallet", href: "/wallet" },
 ];
 
@@ -24,16 +19,21 @@ function DashboardHeader() {
 
   return (
     <header className="h-16 border-b border-border flex items-center justify-between px-6 bg-background/50 sticky top-0 z-20 backdrop-blur-md">
-      
       <div className="flex items-center gap-8">
-        <Link href="/" className="flex items-center gap-2 shrink-0" data-cursor="hover">
-          <Image 
-            src="/logo.png" 
-            alt="Logo" 
-            width={120} 
-            height={40} 
-            className="object-contain" 
-            priority  
+        <Link
+          href="/"
+          className="flex items-center gap-2 shrink-0"
+          data-cursor="hover"
+        >
+          <Image
+            src="/logo.png"
+            alt="Logo"
+            width={120}
+            height={40}
+            style={{ width: "auto", height: "auto" }}
+            className="object-contain h-10 w-auto"
+            priority
+            fetchPriority="high" 
           />
         </Link>
 
@@ -43,9 +43,11 @@ function DashboardHeader() {
               key={item.name}
               href={item.href}
               className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-all
-                 ${pathname === item.href 
-                    ? "text-primary bg-primary/10" 
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"}`}
+                 ${
+                   pathname === item.href
+                     ? "text-primary bg-primary/10"
+                     : "text-muted-foreground hover:text-foreground hover:bg-secondary/50"
+                 }`}
               data-cursor="hover"
             >
               <span>{item.name}</span>
@@ -57,7 +59,7 @@ function DashboardHeader() {
       <div className="flex items-center gap-4 ml-auto">
         <button
           className="p-2 text-muted-foreground hover:text-foreground transition-colors relative"
-          data-cursor="hover"
+          data-cursor="hover" aria-label="Notifications"
         >
           <Bell size={20} />
           <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
@@ -108,16 +110,25 @@ function DashboardHeader() {
                 </div>
 
                 <div className="p-2 flex flex-col gap-1">
-                  <Link href="#" className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary rounded-md transition-colors">
+                  <Link
+                    href="#"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary rounded-md transition-colors"
+                  >
                     <User size={16} /> Profile
                   </Link>
-                  <Link href="#" className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary rounded-md transition-colors">
+                  <Link
+                    href="#"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary rounded-md transition-colors"
+                  >
                     <Settings size={16} /> Settings
                   </Link>
                 </div>
 
                 <div className="p-2 border-t border-border">
-                  <Link href="#" className="flex items-center gap-2 px-3 py-2 text-sm text-red-500 hover:bg-red-500/10 hover:text-red-600 rounded-md transition-colors">
+                  <Link
+                    href="#"
+                    className="flex items-center gap-2 px-3 py-2 text-sm text-red-500 hover:bg-red-500/10 hover:text-red-600 rounded-md transition-colors"
+                  >
                     <LogOut size={16} /> Logout
                   </Link>
                 </div>

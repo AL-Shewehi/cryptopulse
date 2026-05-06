@@ -99,7 +99,12 @@ export default function BalanceDetails() {
 
       {/* الشارت المحدث */}
       <div className="mt-8 flex-1 min-h-62.5">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer
+          width="100%"
+          height="100%"
+          minWidth={1}
+          minHeight={1}
+        >
           <PieChart>
             <Pie
               data={data}

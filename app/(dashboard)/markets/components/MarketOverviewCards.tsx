@@ -140,7 +140,7 @@ const Card = ({ title, items }: { title: string; items: CoinData[] }) => {
                 alt={item.name}
                 width={24}
                 height={24}
-                className="object-contain rounded-full"
+                className="w-6 h-6 min-w-6 object-contain rounded-full"
                 unoptimized
               />
               <span className="text-sm font-bold text-foreground">

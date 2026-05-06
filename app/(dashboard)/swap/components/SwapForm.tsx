@@ -64,6 +64,7 @@ export default function SwapForm({
                   value={fromToken}
                   onChange={(e) => setFromToken(e.target.value)}
                   className="bg-transparent border-none outline-none px-2 font-medium text-foreground"
+                  aria-label="From Token"
                 >
                   <option
                     disabled={toToken === "BTC"}
@@ -114,6 +115,7 @@ export default function SwapForm({
                   value={toToken}
                   onChange={(e) => setToToken(e.target.value)}
                   className="bg-transparent border-none outline-none px-2 font-medium text-foreground"
+                  aria-label="To Token"
                 >
                   <option
                     disabled={fromToken === "BTC"}
@@ -150,6 +152,7 @@ export default function SwapForm({
           <button
             onClick={handleSwap}
             className="absolute top-1/2 left-1/2 -translate-1/2 bg-primary text-black rounded-full p-2 shadow-lg hover:bg-primary/90"
+            aria-label="Swap Button"
           >
             <ArrowUpDown />
           </button>
